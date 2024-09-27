@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ocr_EditActivity"
+    android:scrollbarFadeDuration="4500"
+    android:scrollbarSize="4dp"
+    android:scrollbarThumbVertical="@color/scroll_bar_color"
+    android:fillViewport="true">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="#DAF6FF"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/ocrEditActivityToolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ripple"
+                android:src="@drawable/back_arrow" />
+
+            <TextView
+                android:id="@+id/back_stack_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/back_arrow"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="(x)"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toRightOf="@+id/back_stack_counter"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:text="Editing The Text"
+                android:textColor="#00BFFF"
+                android:textSize="27dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <EditText
+        android:background="#E4FEFF"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:autofillHints="name"
+        android:fontFamily="@font/nunito_semi_bold"
+        android:text="This is a sample text"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_gravity="center_vertical"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Copy Edited Text :"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/copyLottie"
+            android:layout_width="82dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="30dp"
+            android:background="#C1FBFF"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/copy_text"
+            app:lottie_speed="1.5" />
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

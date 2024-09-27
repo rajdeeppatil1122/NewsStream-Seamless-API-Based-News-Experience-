@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--We can use nested scroll view to have one scroll view inside another... -->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ocr_ResultActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbarFadeDuration="4500"
+    android:scrollbarSize="4dp"
+    android:scrollbarThumbVertical="@color/scroll_bar_color">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="#DAF6FF"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/ocrResultActivityToolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ripple"
+                android:src="@drawable/back_arrow" />
+
+            <TextView
+                android:id="@+id/back_stack_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/back_arrow"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="(x)"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toRightOf="@+id/back_stack_counter"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:text="Text-Extracted"
+                android:textColor="#00BFFF"
+                android:textSize="27dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="510dp">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E4FEFF"
+            android:fitsSystemWindows="true"
+            android:scrollbarFadeDuration="3500"
+            android:scrollbarSize="4dp"
+            android:scrollbarThumbVertical="@color/scroll_bar_color">
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:paddingStart="15dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="3dp"
+                android:text="This is a sample Text..."
+                android:textColor="@color/black"
+                android:textSize="18dp">
+
+            </TextView>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ocrCopyTxtTickMark"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:padding="45dp"
+            android:visibility="visible"
+            app:lottie_rawRes="@raw/tick_mark"
+            app:lottie_repeatCount="0"
+            app:lottie_speed="0.6" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txtTakeAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/nunito_extra_bold"
+        android:gravity="center"
+        android:text="TAKE ACTIONS :"
+        android:textColor="#00CDE8"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/textviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:gravity="center"
+            android:text="Copy Text!"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:gravity="center"
+            android:text="Edit Text~"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:gravity="center"
+            android:text="Re-Capture/Re-Select"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lottieViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ocrCopyTxt"
+            android:layout_width="82dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#C1FBFF"
+            android:fitsSystemWindows="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/copy_text"
+            app:lottie_speed="1.5" />
+
+        </LinearLayout>
+
+        <!--            Here, in LottieAnimationView, we have given margin to the views that's why the background color is not set to margin. -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ocrEditTxt"
+            android:layout_width="82dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#FCFFA3"
+            android:fitsSystemWindows="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/edit_text_other"
+            app:lottie_speed="1.3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ocrReselectImg"
+            android:layout_width="82dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#C1FBFF"
+            android:fitsSystemWindows="true"
+            app:layout_constraintVertical_bias="1.0"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/reselect"
+            app:lottie_speed="1.5" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

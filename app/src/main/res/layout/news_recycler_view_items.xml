@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="275dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="7dp"
+        android:id="@+id/newsItemCardView">
+
+        <LinearLayout
+            android:focusable="true"
+            android:background="@drawable/ripple_with_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:text="This is the heading of the news This is the heading of the news This is the heading of the news"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:id="@+id/newsItemMainHeading"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="17dp">
+
+                <TextView
+                    android:textSize="14dp"
+                    android:paddingStart="7dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:text="Here the content of the news will be displayed"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textColor="@color/black"
+                    android:maxLines="6"
+                    android:ellipsize="end"
+                    android:id="@+id/newsItemContent"
+                    android:paddingEnd="7dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@color/cardview_dark_background"
+                    android:id="@+id/newsItemImage"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/newsItemAuthorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By Author Name Here"
+                android:fontFamily="@font/nunito_bold_italic"
+                android:textColor="#00145C"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/newsItemPublishedTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Published At"
+                android:textColor="#00145C"
+                android:padding="5dp"
+                android:layout_marginTop="-3dp"
+                android:textSize="13dp"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/newsItemUrl"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/nunito_bold"-->
+<!--                android:text="Published At"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="13dp"-->
+<!--                android:padding="5dp"/>-->
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

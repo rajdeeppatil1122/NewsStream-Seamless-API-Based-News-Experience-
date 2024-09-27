@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ocr_ImageActivity"
+    android:fillViewport="true"
+    android:scrollbarFadeDuration="1500"
+    android:scrollbarSize="4dp"
+    android:scrollbarThumbVertical="@color/scroll_bar_color">
+
+<!-- fillViewport : Defines whether the scrollview should stretch its content to fill the viewport. (IT IS VERY IMPORTANT)   -->
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="#DAF6FF"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/ocrImageActivityToolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ripple"
+                android:src="@drawable/back_arrow" />
+
+            <TextView
+                android:id="@+id/back_stack_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/back_arrow"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="(x)"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toRightOf="@+id/back_stack_counter"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:text="Image Preview"
+                android:textColor="#00BFFF"
+                android:textSize="27dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!--    You can give the background color to the image, it will overlap... -->
+
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/ocrImageSelectedLL"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/ocrImageSelected"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ripple_with_border"
+                android:fitsSystemWindows="true" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieProcessing"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                android:padding="20dp"
+                android:visibility="invisible"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/processing_other"
+                app:lottie_speed="5" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
+        android:fontFamily="@font/nunito_extra_bold"
+        android:text="Proceed Ahead"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ocrImageSelectedLL" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:background="#FFDDDD"
+        android:fitsSystemWindows="true"
+        android:fontFamily="@font/nunito_bold"
+        android:paddingStart="8dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="5dp"
+        android:text="Not Satisfied? Choose Again...👇"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+
+    <LinearLayout
+        android:id="@+id/textviewsLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lottieviewsLL"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:text="Re-Capture Image"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:text="Re-Select Image"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lottieviewsLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ocrCameraLottieImgActivity"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="#D0FFCF"
+            android:fitsSystemWindows="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/camera_pop_another"
+            app:lottie_speed="1.5 " />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ocrGalleryLottieImgActivity"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="#D0FFCF"
+            android:fitsSystemWindows="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/gallery_pop"
+            app:lottie_speed="2" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
